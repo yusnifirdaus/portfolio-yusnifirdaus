@@ -110,6 +110,18 @@ if (backToTop) {
   }, { passive: true });
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
+
+const revealItems = document.querySelectorAll('main > section:not(.hero), .project-card, .video-card, .highlight-block, .contact-invite');
+revealItems.forEach(item => item.classList.add('scroll-reveal'));
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+revealItems.forEach(item => revealObserver.observe(item));
 const videoCards = document.querySelectorAll('.video-card');
 videoCards.forEach(card => {
   card.setAttribute('tabindex', '0');
