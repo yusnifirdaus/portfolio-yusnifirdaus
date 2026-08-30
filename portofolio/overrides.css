@@ -1,0 +1,34 @@
+.hero-image-wrap{position:relative}
+.hero-image-wrap img{mix-blend-mode:normal;filter:none;opacity:1}
+.hero-note{color:#25aaa4!important}
+.ticker-link{padding:14px 19px;border:1px solid var(--lime);border-radius:999px;color:var(--paper);letter-spacing:.13em;transition:background .25s ease,color .25s ease,transform .25s ease}.ticker-link:hover{background:var(--lime);color:var(--ink);transform:translateY(-3px)}
+.ticker-heading{position:relative;width:max-content;margin:58px auto 16px;padding:10px 19px 10px 31px;color:#188f8b;font:600 12px 'Space Grotesk',sans-serif!important;letter-spacing:.14em;text-align:center;text-transform:uppercase;background:#e8f8f6;border:1px solid rgba(37,185,177,.35);border-radius:999px;box-shadow:0 7px 18px rgba(16,45,53,.08)}
+.ticker-heading::before{content:'✳';position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#25b9b1;font-size:12px}
+.ticker-heading::after{content:'';position:absolute;left:50%;bottom:-11px;width:58px;height:2px;transform:translateX(-50%);background:#25b9b1;border-radius:99px;box-shadow:0 0 0 4px rgba(37,185,177,.12)}
+.hero{padding-bottom:30px}.ticker-heading{margin-top:8px}
+@media(max-width:720px){.ticker-heading{margin:42px auto 13px;font-size:10px;padding:9px 16px 9px 27px}.ticker-heading::before{left:9px;font-size:10px}}
+@media(max-width:720px){.hero{padding-bottom:30px}.ticker-heading{margin-top:8px}}
+.name-dash{display:inline-block;margin-left:-14px}
+@media(max-width:720px){.name-dash{margin-left:-7px}}
+.name-dash{display:none}
+.hero{min-height:680px;grid-template-columns:1.08fr .92fr;gap:3vw;padding:72px 5vw 106px;position:relative;overflow:hidden;background:#fff}
+.hero::after{content:'I am Muhammad';inset:30px auto auto 5vw;background:none;color:#f4f4f3;font:700 clamp(64px,10vw,156px) 'DM Mono',monospace;letter-spacing:-.12em;white-space:nowrap;text-align:left;z-index:-1}
+.hero-copy{align-self:center;max-width:680px}.hero-greeting{font:21px 'DM Mono',monospace;margin:0 0 25px;color:#172c32}.hero h1{font:700 clamp(32px,4.4vw,69px) 'DM Mono',monospace;line-height:1.02;letter-spacing:-.08em;white-space:normal;color:#111;max-width:620px}.hero h1 .name-line{color:#111;display:inline-block}.hero-role{font:700 clamp(20px,2.5vw,35px) 'DM Mono',monospace;letter-spacing:-.07em;color:#b5b8b7;margin:20px 0 0;text-transform:none}.hero-role i{color:#25b9b1}.hero-note{font:11px 'DM Mono',monospace;line-height:1.55;max-width:410px;color:#b5b8b7;margin:23px 0 16px}.hero-contact{display:flex;gap:24px;align-items:center;font:10px 'DM Mono',monospace;color:#b5b8b7;margin-bottom:27px}.hero-contact a{color:#aeb2b1}.hero-actions{display:flex;gap:13px}.hero-actions .button{font:11px 'DM Mono',monospace;padding:14px 21px;border-radius:3px;gap:0}.hero-actions .button-dark{background:#25b9b1;box-shadow:none}.button-outline{border:1px solid #172c32;color:#172c32}.hero-visual{align-self:center;margin-top:-20px;position:relative}.hero-visual::before{content:'';position:absolute;width:190px;height:390px;left:-70px;bottom:28px;background:#173038;border-radius:60% 40% 48% 52% / 40% 52% 48% 60%;transform:rotate(25deg);z-index:-1}.hero-visual::after{content:'';position:absolute;width:300px;height:170px;right:-90px;top:-22px;background:#f6f6f5;border-radius:50%;z-index:-2}.hero-image-wrap{height:470px;width:min(100%,540px);margin-left:auto;border-radius:52% 48% 50% 50% / 37% 44% 56% 63%;box-shadow:none;transform:none;background:#25b9b1;overflow:hidden}.hero-image-wrap img{object-position:center 23%}.hero-stats{grid-template-columns:repeat(3,1fr);gap:12px;margin:25px -70px 0 0}.hero-stats div{min-height:100px;display:flex;flex-direction:column;justify-content:center;padding:16px 18px;border-radius:3px;box-shadow:0 9px 26px rgba(16,45,53,.12);background:#fff}.hero-stats strong{font:700 11px 'DM Mono',monospace}.hero-stats span{font:10px 'DM Mono',monospace;color:#a6abaa;margin-top:6px}.vertical-label{display:none}
+@media(max-width:720px){.hero{display:block;min-height:820px;padding:78px 7vw 85px}.hero::after{font-size:18vw;top:45px;left:7vw}.hero-copy{max-width:none}.hero-greeting{font-size:16px;margin-bottom:21px}.hero h1{font-size:8vw;white-space:normal;line-height:1.1}.hero-role{font-size:6vw;margin-top:15px}.hero-note{font-size:10px}.hero-contact{display:block;line-height:2;margin-bottom:18px}.hero-contact span{display:block}.hero-actions .button{padding:13px 15px}.hero-visual{margin:65px 7vw 0 4vw}.hero-image-wrap{height:320px}.hero-stats{margin:20px -26px 0 0;gap:6px}.hero-stats div{min-height:86px;padding:11px 8px}.hero-stats strong{font-size:9px}.hero-stats span{font-size:8px}.hero-visual::before{width:105px;height:250px;left:-35px;bottom:23px}}
+.hero-visual::after{display:none}
+.hero-visual::before{width:100%;height:470px;left:0;bottom:90px;background:#f6f6f5;border-radius:52% 48% 50% 50% / 37% 44% 56% 63%;transform:translate(-18px,12px);z-index:-1}
+@media(max-width:720px){.hero-visual::before{width:100%;height:320px;left:0;bottom:78px;border-radius:52% 48% 50% 50% / 37% 44% 56% 63%;transform:translate(-12px,9px)}}
+.hero-visual::before{bottom:38px;transform:translate(-18px,62px)}
+@media(max-width:720px){.hero-visual::before{bottom:38px;transform:translate(-12px,35px)}}
+.hero::after{content:'I am Muhammad\A Yusni Firdaus';inset:54px auto auto 5vw;width:620px;background:none;color:#f2f3f2;font:700 clamp(42px,5.3vw,78px)/.95 'DM Mono',monospace;letter-spacing:-.08em;white-space:pre;text-align:left;z-index:-1}
+@media(max-width:720px){.hero::after{content:'I am Muhammad\A Yusni Firdaus';inset:54px auto auto 7vw;width:86vw;font-size:12vw}}
+.hero::after{width:820px;font-size:clamp(58px,8vw,126px);line-height:.88;top:34px}
+@media(max-width:720px){.hero::after{width:92vw;font-size:17vw;top:43px}}
+/* Unified typography */
+html,body,body *{font-family:'DM Mono',monospace!important}
+em,h1 em,h2 em{font-family:'DM Mono',monospace!important;font-style:normal;font-weight:400}
+.brand,.brand span,.hero h1,.section-heading h2,.about-section h2,.contact-section h2,.journal-section>h2{font-family:'DM Mono',monospace!important}
+.hero,.hero *{font-family:'Space Grotesk',sans-serif!important}
+.hero::after{font-family:'Space Grotesk',sans-serif!important}
+.hero h1{font-family:'Space Grotesk',sans-serif!important;font-size:clamp(42px,5vw,76px);font-weight:700;font-style:normal;line-height:.98;letter-spacing:-.065em;text-transform:none}.hero h1 .name-line{font-weight:700}
+.hero-greeting{font-size:18px;font-weight:500;line-height:1.2;letter-spacing:-.02em}.hero-role{font-size:clamp(20px,2.5vw,34px);font-weight:600;font-style:normal;line-height:1;letter-spacing:-.055em}.hero-note{font-size:12px;font-weight:400;line-height:1.55;letter-spacing:-.02em}.hero-contact{font-size:10px;font-weight:400;line-height:1.4;letter-spacing:-.02em}.hero-actions .button{font-size:11px;font-weight:600;line-height:1;letter-spacing:-.02em;text-transform:none}
