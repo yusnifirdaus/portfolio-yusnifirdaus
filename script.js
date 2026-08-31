@@ -122,7 +122,7 @@ const revealObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
 revealItems.forEach(item => revealObserver.observe(item));
-const videoCards = document.querySelectorAll('.video-card');
+const videoCards = document.querySelectorAll('.video-card:not(.local-video-card)');
 videoCards.forEach(card => {
   card.setAttribute('tabindex', '0');
   card.setAttribute('role', 'button');
@@ -149,4 +149,48 @@ videoCards.forEach(card => {
   card.querySelector('.video-meta').appendChild(videoLink);
   card.addEventListener('click', openVideoPreview);
   card.addEventListener('keydown', event => { if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openVideoPreview(); } });
+});
+
+const videoGrid = document.querySelector('.video-grid');
+if (videoGrid) {
+  const videoCarousel = document.createElement('div');
+  videoCarousel.className = 'video-carousel';
+  videoGrid.parentNode.insertBefore(videoCarousel, videoGrid);
+  videoCarousel.appendChild(videoGrid);
+  const previousVideo = document.createElement('button');
+  const nextVideo = document.createElement('button');
+  previousVideo.className = 'video-carousel-arrow previous';
+  nextVideo.className = 'video-carousel-arrow next';
+  previousVideo.setAttribute('aria-label', 'Kategori video sebelumnya');
+  nextVideo.setAttribute('aria-label', 'Kategori video berikutnya');
+  previousVideo.textContent = '‹';
+  nextVideo.textContent = '›';
+  videoCarousel.append(previousVideo, nextVideo);
+  const moveVideos = direction => videoGrid.scrollBy({ left: direction * (videoGrid.clientWidth * .78), behavior: 'smooth' });
+  previousVideo.addEventListener('click', () => moveVideos(-1));
+  nextVideo.addEventListener('click', () => moveVideos(1));
+}
+
+document.querySelectorAll('.local-video-card').forEach(card => {
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('role', 'button');
+  const ids = card.dataset.localVideoIds.split(',');
+  const openLocalVideos = () => {
+    const preview = document.createElement('div');
+    preview.className = 'video-modal';
+    const embeds = ids.map((id, index) => `<video class="local-modal-video" controls preload="metadata" src="${id}"></video>`).join('');
+    preview.innerHTML = `<div class="video-modal-inner video-local-modal"><button class="video-modal-close" aria-label="Tutup preview">×</button><div class="video-embed-list">${embeds}</div><div><p>Talking head edit · ${ids.length} videos</p><h3>Talking Head Edit</h3><span>Dua versi video tersedia di dalam koleksi ini.</span></div></div>`;
+    document.body.appendChild(preview);
+    const close = () => preview.remove();
+    preview.querySelector('.video-modal-close').addEventListener('click', close);
+    preview.addEventListener('click', event => { if (event.target === preview) close(); });
+  };
+  const link = document.createElement('a');
+  link.className = 'video-open-link';
+  link.href = '#';
+  link.textContent = 'Lihat semua video ↗';
+  link.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); openLocalVideos(); });
+  card.querySelector('.video-meta').appendChild(link);
+  card.addEventListener('click', event => { if (!event.target.closest('video, .video-open-link')) openLocalVideos(); });
+  card.addEventListener('keydown', event => { if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openLocalVideos(); } });
 });
